@@ -12,4 +12,4 @@ J’aime comprendre comment fonctionnent les réseaux et les systèmes, puis les
 
 ## Technologies
 
-HTML, CSS, Figma, Git, GitHub
+Langage C, HTML, CSS, Figma, Git, GitHub
