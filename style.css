@@ -1,0 +1,61 @@
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#101828; --muted:#515C70; --line:#D9DFE8;
+  --accent:#2B4EFF; --accent-ink:#FFFFFF; --tint:#E6EBFF;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1320; --surface:#161D2E; --ink:#EEF1F7; --muted:#9AA6BD; --line:#27304A;
+    --accent:#7C93FF; --accent-ink:#0E1320; --tint:#1D2745; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1320; --surface:#161D2E; --ink:#EEF1F7; --muted:#9AA6BD; --line:#27304A;
+  --accent:#7C93FF; --accent-ink:#0E1320; --tint:#1D2745; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;gap:1.5rem;justify-content:flex-end;padding:1.25rem 0;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* Hero : un cadre sélectionné façon Figma */
+.hero{padding:3rem 0 5rem}
+.frame{position:relative;display:inline-block;max-width:100%;padding:1.5rem 1.75rem;border:2px solid var(--accent);background:var(--tint);margin:1rem 0 2rem}
+.frame::before{content:"Étudiant ESGI";position:absolute;left:-2px;top:-1.9rem;background:var(--accent);color:var(--accent-ink);font-size:.8rem;font-weight:600;padding:.1rem .6rem;border-radius:4px 4px 0 0}
+.frame i{position:absolute;width:11px;height:11px;background:var(--surface);border:2px solid var(--accent)}
+.frame i:nth-child(1){left:-7px;top:-7px}.frame i:nth-child(2){right:-7px;top:-7px}
+.frame i:nth-child(3){left:-7px;bottom:-7px}.frame i:nth-child(4){right:-7px;bottom:-7px}
+h1{font-size:clamp(2.6rem,8vw,5.2rem);line-height:1;letter-spacing:-.03em;font-weight:800;margin:0}
+.tagline{font-size:clamp(1.25rem,3vw,1.65rem);font-weight:600;line-height:1.25;letter-spacing:-.01em;max-width:38rem;margin:0 0 1rem}
+.lead{font-size:1.25rem;max-width:38rem;color:var(--muted);margin:0 0 2rem}
+.lead strong{color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.alt{color:var(--ink);border-color:var(--line)}
+.btn:hover{border-color:var(--ink)}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.02em;line-height:1.15;margin:0 0 1.75rem}
+.projects{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.card h3{margin:0;font-size:1.3rem;line-height:1.2}
+.card p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.tags li{background:var(--tint);color:var(--ink);font-size:.85rem;font-weight:600;padding:.15rem .65rem;border-radius:999px}
+.links{display:flex;gap:1rem;margin-top:auto;padding-top:.5rem;font-weight:600}
+.skills{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.skills h3{margin:0 0 .5rem;font-size:1.05rem}
+.about{max-width:40rem}
+.contact a.big{font-size:clamp(1.4rem,4vw,2.2rem);font-weight:800;letter-spacing:-.02em;word-break:break-word}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:no-preference){
+  .frame{animation:pop .6s ease-out both}
+  @keyframes pop{from{clip-path:inset(0 100% 100% 0)}to{clip-path:inset(0 0 0 0)}}
+}
